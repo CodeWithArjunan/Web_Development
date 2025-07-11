@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle">
+                    <img src="images/left-arrow.png" style="width: 14px;top: 20px;">
+                </div>
+                <div class="circle">
+                    <img src="images/burger-bar.png" style="width: 14px;top: 20px;">
+                </div>
+            </nav>
+            <img src="images (1).jpeg" class="img">
+            <h1 >Indila Love Story</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+
+        <audio  id="songs">
+            <source src="song/Believer(PagalNew.Com.Se).mp3" id="song">
+        </audio>
+
+        <input type="range" value=0 id="progress">
+
+        <div class="controls">
+            <div>
+                <img src="images/left-arrow (1).png" style="width: 6vh;">
+            </div>
+            <div onclick="playy(event)" class="playy">
+                <img src="images/play-button.png" style="width: 48px;top: 20px;">
+            </div>
+            <div>
+                <img src="images/arrow-right.png" style="width: 7vh;">
+            </div>
+        </div>
+        </div>
+    </div>
+<script>
+       var progress=document.getElementById("progress");
+       var song=document.getElementById("songs");
+       var curentTime=document.getElementById("ctrIcon");
+       var pause=document.querySelector(".pause");
+       var play=document.querySelector(".playy");
+
+    song.onloadedmetadata = function(){
+        progress.max = song.duration;
+        progress.value = song.CurrentTime;
+    }
+          pause.style.display= "none";
+    function playy(event){
+       song.play();
+       play.style.display="none";
+       pause.style.display="block";
+       innerHeight
+       
+    }
+    
+if(song.play()){
+    setInterval(()=>{
+        progress.value = song.curentTime;
+    },500);
+}
+</script>
+</body>
+</html>
