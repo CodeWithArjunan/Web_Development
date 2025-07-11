@@ -1,0 +1,54 @@
+body{
+    background: fixed;
+    background-color:rgb(73, 73, 73) ;
+}
+.container{
+    width: 50vh;
+    height: 30vh;
+    border-radius: 15px;
+    background-color: white;
+    margin: 20px;
+    padding: 15px 15px;
+    position: absolute;
+    top: 23vh;
+    left: 36%;
+}
+#pop{
+    height: 53vh;
+}
+form input,button{
+    margin: 5px;
+    margin-top: 15px;
+    padding: 10px;  
+}
+
+.input{
+    outline: none;
+    border-radius: 10px;
+    color: black;
+    width: 42vh;
+    border: 2px solid blue;
+    margin-top: 10px;
+}
+.input::placeholder{
+    color: black;
+}
+.btn{
+    outline: none;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    width: 45vh;
+    box-shadow:rgb(6, 63, 170);
+    border: 2px solid blue;
+    cursor: pointer;
+}
+form h4{
+    margin-left: 10px;
+    margin-top: 15px;
+    font-size: 20px;
+}
+#qrImage{
+    margin-left: 25%;
+    margin-top: 10px;
+}
