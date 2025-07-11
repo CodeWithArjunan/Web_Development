@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form >
+            <h4>Enter Yur text or URL</h4>
+            <input type="text" placeholder="Text or QR" class="input">
+            <div id="imgBox">
+                <img src=" " id="qrImage">
+            </div>
+            <button class="btn" onclick="genarator(event)"  >Generate QR Code</button>
+         
+        </form>
+    </div>
+
+
+    <script>
+       var text=document.querySelector(".input")
+       var Box=document.querySelector(".container")
+        function genarator(event){
+            event.preventDefault()
+            var qrImage=document.getElementById("qrImage")
+            qrImage.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" +text.value
+              Box.setAttribute("id","pop")
+        }
+       </script>
+
+</body>
+
+</html>
