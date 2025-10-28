@@ -1,4 +1,5 @@
 import React from 'react'
+import PropType from 'prop-types';  // npm install prop-types
 
 function ProductDetail({na,pri,des}){
     console.log("----"+na);
@@ -10,3 +11,16 @@ function ProductDetail({na,pri,des}){
 }
 
 export default ProductDetail;
+
+//react default val
+ProductDetail.defaultProps={
+  na:"HP",
+  pri:2000,
+  des:"HP old version"
+}
+//PropType checking 
+ProductDetail.prototype={
+  na: PropType.string.isRequired,
+  pri: PropType.number.isRequired,
+  des: PropType.string.isRequired
+}
