@@ -30,7 +30,7 @@ let divbox={
 
     //Style method 2
     //npm install style-Component,
-    //gitdagruy/react_style_Components -->index.css /git repos
+    //https://github.com/gitdagray/react_styling_components/blob/main/src/index.css -->gitdaray css
 
 
     //Event Hangling
