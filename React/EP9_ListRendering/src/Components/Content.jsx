@@ -1,22 +1,35 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import Shop from './Shop'
+import { FaRegTrashAlt } from "react-icons/fa";
 
-let user={id:1,compo:"Class"}
+const Content=()=>{
+  let [items, setItems] = useState([
+  { id: 1, lable:"Html&Css",checked:true },
+   { id: 2, lable:"JavaScript",checked:true },
+    { id: 3, lable:"React",checked:false}
+]);
 
-let {id,compo}=user
-
-
-export default class Content extends Component {
-  render() {
     return (
-      <main> 
-          <div className='box'>
-            <form action="">
-                <Shop/>
-            </form>
-          </div>
-
-      </main>
+      <main>
+        <div>
+          <input type="text"/>
+          <button>Add</button>
+        </div>
+        <ul>
+          {
+            items.map((item)=>{
+              return(
+                <li key={item.id} className="item">
+                    <input type="checkbox" checked={item.checked}/>
+                    <label>{item.lable}</label>
+                    <FaRegTrashAlt />
+                </li>
+              );
+            })
+            }
+        </ul>
+        </main>
     )
-  }
-}
+};
+
+export default Content;

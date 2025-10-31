@@ -61,3 +61,14 @@ footer {
 .box{
   outline: firebrick;
 }
+
+main ul{
+  list-style: none;
+}
+main .item svg{
+  color: rgb(118, 118, 210);
+  outline: none;
+}
+main .item svg:hover{
+  color: red;
+}
