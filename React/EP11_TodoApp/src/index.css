@@ -65,10 +65,12 @@ footer {
 main ul{
   list-style: none;
 }
-main .item svg{
-  color: rgb(118, 118, 210);
+
+main  .edit{
+  color: rgb(230, 186, 42);
   outline: none;
 }
-main .item svg:hover{
-  color: red;
+main .dalete{
+  color: rgb(205, 17, 17);
+  outline: none;
 }

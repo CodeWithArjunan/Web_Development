@@ -12,20 +12,54 @@ const Content = () => {
   //Input Handling
   let [newItem, setNewItem] = useState("");
 
+  //store a edit id state
   //CheckBox Handling
+  let [currentIndex, setCurrentIndex] = useState(null);
   let handChecked = (id) => {
-    console.log("li"+id);
+    console.log("li" + id);
     let newListItem = items.map((item) => {
-      return (item.id === id ? { ...item, checked: !item.checked } : item)
+      return item.id === id ? { ...item, checked: !item.checked } : item;
     });
     setItems(newListItem);
-        console.log("li"+id);
+    console.log("li" + id);
   };
 
   //Edit button handling
   let [isEditing, setIsEditing] = useState(false);
-  let handleUpdate = () => {
+  let handleUpdate = (id) => {
+    let ListItem = items.find((item) => item.id === id);
+    setNewItem(ListItem.lable);
+    setCurrentIndex(id);
+    console.log(setCurrentIndex(id));
     setIsEditing(true);
+  };
+
+  //Handle Delete
+  let handleDalete = (id) => {
+    let newItems = items
+      .filter((item) => item.id !== id)
+      .map((item, index) => {
+        return { ...item, id: index + 1 };
+      });
+    setItems(newItems);
+  };
+  //Handling a Add and Save Button
+  let handleAddorSave = () => {
+    if (isEditing) {
+      let newItems = items.map((item) => {
+        return item.id === currentIndex ? { ...item, lable: newItem } : item;
+      });
+      setItems(newItems);
+      setIsEditing(false);
+      setNewItem("");
+      setCurrentIndex(null);
+    } else {
+      setItems([
+        ...items,
+        { id: items.length + 1, lable: newItem, checked: false },
+      ]);
+      setNewItem("");
+    }
   };
 
   return (
@@ -39,7 +73,7 @@ const Content = () => {
             setNewItem(e.target.value);
           }}
         />
-        <button>{isEditing ? "Save" : "Add"}</button>
+        <button onClick={handleAddorSave}>{isEditing ? "Save" : "Add"}</button>
       </div>
       <ul>
         {items.map((item) => {
@@ -51,8 +85,18 @@ const Content = () => {
                 onChange={() => handChecked(item.id)}
               />
               <label>{item.lable}</label>
-              <FaEdit role="button" tabIndex={0} onClick={handleUpdate} />
-              <FaRegTrashAlt role="button" tabIndex={0} />
+              <FaEdit
+                className="edit"
+                role="button"
+                tabIndex={0}
+                onClick={() => handleUpdate(item.id)}
+              />
+              <FaRegTrashAlt
+                className="dalete"
+                role="button"
+                tabIndex={0}
+                onClick={() => handleDalete(item.id)}
+              />
             </li>
           );
         })}
