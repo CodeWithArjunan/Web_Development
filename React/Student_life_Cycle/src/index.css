@@ -1,0 +1,16 @@
+:root {
+  color-scheme: light;
+  --yellow: #ffd700;
+  --black: #000000;
+  --white: #ffffff;
+}
+html {
+  min-width: 360px;
+  background: var(--white);
+}
+body {
+  margin: 0;
+}
+#root {
+  min-height: 100vh;
+}

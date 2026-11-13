@@ -1,0 +1,11 @@
+export { default as Overview } from "./Overview";
+export { default as AdmissionCycle } from "./AdmissionCycle";
+export { default as Applications } from "./Applications";
+export { default as DocumentVerification } from "./DocumentVerification";
+export { default as StaffReview } from "./StaffReview";
+export { default as ShortlistedApplications } from "./ShortlistedApplications";
+export { default as FinalApplications } from "./FinalApplications";
+export { default as AdmissionHistory } from "./AdmissionHistory";
+export { default as AuditLogs } from "./AuditLogs";
+export { default as Settings } from "./Settings";
+export { default as Profile } from "./Profile";
